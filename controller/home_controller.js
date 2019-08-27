@@ -3,6 +3,8 @@ const Post = require('../models/post');
 module.exports.home = function(req, res){
 
 
+    
+
     // populate the user of each post
     Post.find({}).populate('user').populate({
         path: 'comments',
@@ -16,6 +18,7 @@ module.exports.home = function(req, res){
         });
     })
 
+           
 
   
    
