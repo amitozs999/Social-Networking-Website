@@ -1,9 +1,10 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = function(req, res){
 
 
-    
+
 
     // populate the user of each post
     Post.find({}).populate('user').populate({
@@ -12,11 +13,18 @@ module.exports.home = function(req, res){
             path: 'user'
         }
     }).exec(function(err, posts){
-        return res.render('home', {
-            title: "Codeial | Home",
-            posts:  posts
+
+        User.find({}, function(err, user){
+            return res.render('home', {
+                title: "Codeial | Home",
+                posts:  posts,
+                all_users: user
+            });
         });
+
+       
     })
+
 
            
 

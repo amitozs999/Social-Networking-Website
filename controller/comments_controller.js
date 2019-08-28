@@ -26,8 +26,12 @@ module.exports.create = function(req, res){
 module.exports.destroy = function(req, res){
     Comment.findById(req.params.id, function(err, comment){
         if (comment.user == req.user.id){
-
-            let postId = comment.post;
+           //comments { comment id,post id}
+           //save postid
+          //comment delete
+          //postid {  comments->commentid}
+          //delete comment id from post also
+           let postId = comment.post;
 
             comment.remove();
 
