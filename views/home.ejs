@@ -32,7 +32,7 @@
                 </p>
                 <div class="post-comments">
                     <% if (locals.user){ %>
-                        <form action="/comments/create" method="POST">
+                        <form  id="post-<%= post._id %>-comments-form" action="/comments/create" method="POST">
                             <input type="text" name="content" placeholder="Type Here to add comment...">
                             <input type="hidden" name="post" value="<%= post._id %>" >
                             <input type="submit" value="Add Comment">
@@ -43,20 +43,22 @@
                     <div class="post-comments-list">
                         <ul id="post-comments-<%= post._id %>">
                             <% for (comment of post.comments){%>
-                                
-                            <p>
-                                    <% if (locals.user && locals.user.id == comment.user.id){ %>
+                                <li id="comment-<%= comment._id %>">
+                                    <p>
+                                        <% if (locals.user && locals.user.id == comment.user.id){ %>
+                                        
                                         <small>
-                                            <a href="/comments/destroy/<%= comment.id %>">X</a>
+                                            <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">X</a>
                                         </small>
                                         <% } %>
-        
-                                <%= comment.content %>
-                                <br>
-                                <small>
-                                    <%= comment.user.name %>
-                                </small>
-                            </p>    
+                                        <%= comment.content %>
+                                        <br>
+                                        <small>
+                                            <%= comment.user.name %>
+                                        </small>
+                                    </p>    
+                            
+                            </li>  
                             <%} %>
                         </ul>
                     </div>
@@ -86,5 +88,6 @@
         <% }%>
     </section>
     </div>
+    <script src="/js/home_post_comments.js" ></script>
 
     <script src="/js/home_posts.js"></script>

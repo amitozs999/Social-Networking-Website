@@ -14,6 +14,10 @@ module.exports.create = async function(req, res){
         });
         
         if (req.xhr){
+
+           // to populate  name of the user ( not want to send the password in the API)
+            post = await post.populate('user', 'name').execPopulate();
+
             return res.status(200).json({
                 data: {
                     post: post

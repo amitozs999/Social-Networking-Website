@@ -42,19 +42,20 @@
                     </p>
                     <div class="post-comments">
                         
-                            <form action="/comments/create" method="POST">
-                                <input type="text" name="content" placeholder="Type Here to add comment..." required>
-                                <input type="hidden" name="post" value="${ post._id }" >
-                                <input type="submit" value="Add Comment">
-                            </form>
-               
-                
-                        <div class="post-comments-list">
-                            <ul id="post-comments-${ post._id }">
-                                
-                            </ul>
-                        </div>
-                    </div>
+                    <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST">
+                        <input type="text" name="content" placeholder="Type Here to add comment..." required>
+                        <input type="hidden" name="post" value="${ post._id }" >
+                        <input type="submit" value="Add Comment">
+                    </form>
+       
+        
+                <div class="post-comments-list">
+                    <ul id="post-comments-${ post._id }">
+                        
+                    </ul>
+                </div>
+            </div>
+
                     
                 </li>`)
     }
