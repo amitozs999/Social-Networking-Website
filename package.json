@@ -7,6 +7,7 @@
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.0.0",
     "cookie-parser": "^1.4.4",
+    "crypto": "^1.0.1",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-compile-sass": "^4.0.0",
@@ -18,6 +19,7 @@
     "node-sass": "^4.12.0",
     "node-sass-middleware": "^0.11.0",
     "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "sass": "^1.22.10"
