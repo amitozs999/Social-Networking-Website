@@ -9,8 +9,9 @@ let transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: 'alchemy.cn18',
-        pass: 'codingninjas'
+        //gmail of user using which we want to send emails ekas001
+        user: '',
+        pass: ''
     }
 });
 
