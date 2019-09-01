@@ -10,7 +10,10 @@ router.get('/',homeController.home);
 router.use('/user',require('./users'));
 router.use('/posts', require('./posts'));
 router.use('/comments', require('./comments'));
+router.use('/likes', require('./likes'));
+
 router.use('/api', require('./api'));
+
 
 //index.js->routes->index.js->api  index.js-> v1  index.js->posts.js ->  post_api.js
 
