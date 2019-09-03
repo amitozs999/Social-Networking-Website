@@ -21,7 +21,7 @@ class ChatEngine{
 
             self.socket.emit('join_room', {
                 user_email: self.userEmail,
-                chatroom: 'my chat room 1'
+                chatroom: 'codeial'
             });
 
             self.socket.on('user_joined', function(data){
